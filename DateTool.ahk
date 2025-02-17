@@ -341,7 +341,6 @@ SendDate() {
    If !WinWaitActive(TargetWindow, , 1)
       Return
    SendInput(Date)
-   SoundBeep ; Temporary send notification.
 }
 ; ===================================================================
 ; Name: isHoliday; Author: tidbit; Created: Thursday, June 11, 2020

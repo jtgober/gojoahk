@@ -123,6 +123,4 @@ sleep 1000
 Run Location
 ; msgbox FullReport
 
-SoundBeep 1800, 700
-SoundBeep 1200, 200
 ExitApp

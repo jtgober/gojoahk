@@ -3585,3 +3585,8 @@ The ACLogAnalyzer tool reads from this, and culls items from it.
 2024-11-04 << :*?:emnt::ment
 2024-11-04 -- :*:nwo::now
 2024-11-04 -- :*?:ganaly::ginally
+2025-02-16 -- ::cant::can't
+2025-02-16 -- :?:ign::ing
+2025-02-16 -- :?:lyu::ly
+2025-02-16 -- :*:thats::that's
+2025-02-16 << :*:wanna::want to

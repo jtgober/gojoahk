@@ -179,8 +179,6 @@ peekToolTip(*) ; sneak-a-peek at working variables.
    ToolTip(,,,8)        ; Right-click notificiation.
 }
 
-soundBeep(1600, 75) 
-soundBeep(1700, 50) ; startup announcement
 
 ; This creates the inputHook that actually watches the keypresses. 
 tih := InputHook('L0 V I2'), typoCache := ""
@@ -265,7 +263,6 @@ tih_EndChar(tih, vk, sc) {
                   ToolTip "::" newTrig "::" newRepl, (A_ScreenWidth/2), 10, 6
             }
             If (beepEachHotString = 1)
-               soundBeep(1200, 200)       ; announcement of capture.	
          }
 		}
 		typoCache := ""               ; Clear var to start over. 

@@ -358,10 +358,10 @@ CheckClipboard(*) {
 	Global ClipboardOld := ClipboardAll() ; Save and put back later.
 	A_Clipboard := ""  ; Must start off blank for detection to work.
 	
-	global A_Args
-	if (A_Args.Length > 0) { ; Check if a command line argument is present.
-		A_Clipboard := A_Args[1] ; Sent via command line, from MCLogger.
-		A_Args := [] ; Clear, the array after each use. 
+	global A_Args1
+	if (A_Args1.Length > 0) { ; Check if a command line argument is present.
+		A_Clipboard := A_Args1[1] ; Sent via command line, from MCLogger.
+		A_Args1 := [] ; Clear, the array after each use. 
 	}	
 	else { ; No cmd line, so just simulate copy like normal. 
 		Send("^c") ; Copy selected text.
@@ -541,7 +541,6 @@ ExamineWords(strT, strR)
 		ButExam.text := "Done"
 		If(hFactor != 0) {
 			SizeTog.text := "Make Bigger"
-			SoundBeep
 			SubTogSize(hFactor, wFactor) ; Make replacement edit box small again.
 		}
 		ShowHideButtonExam(True)
@@ -697,11 +696,9 @@ TriggerChanged(*)
 FormAsFunc(*) {	
 	If (ChkFunc.Value = 1) {
 		MyDefaultOpts.text := "B0X" StrReplace(StrReplace(MyDefaultOpts.text, "B0", ""), "X", "")
-		SoundBeep 700, 200
 	}
 	else {
 		MyDefaultOpts.text := StrReplace(StrReplace(MyDefaultOpts.text, "B0", ""), "X", "")
-		SoundBeep 900, 200
 	}
 }
 
@@ -1642,10 +1639,6 @@ acMenu.Add("Exit Script", (*) => ExitApp())
 acMenu.SetIcon("Exit Script", "icons/exit-Blue.ico")
 acMenu.SetColor("Silver")
 
-;===============================================================================
-; Startup anouncement.  Also beeps whenever HotString Helper appends an item.
-SoundBeep(900, 250)
-SoundBeep(1100, 200)
 
 ;===============================================================================
 #HotIf WinActive(NameOfThisFile,) || WinActive(HotstringLibrary) ; Can't use A_Var here.
@@ -1721,7 +1714,6 @@ fix_consecutive_caps() {
 			else if (char3 ~= "[a-z]")  ; If char is lowercase alpha.
 			|| (char3 = A_Space && char1 char2 ~= "OF|TO|IN|IT|IS|AS|AT|WE|HE|BY|ON|BE|NO") ; <--- Remove this line to prevent correction of those 2-letter words.
 			{	SendInput("{BS 2}" StrLower(char2) char3)
-				SoundBeep(800, 80) ; Case fix announcent. 
 			}
 		}
 	}
@@ -1791,7 +1783,6 @@ f(replace := "")
 
 	HSInputBuffer.Stop()
 	If (beepOnCorrection = 1)
-		SoundBeep(900, 60) ; Notification of replacement.
 	SetTimer(keepText.bind(LastTrigger), -1)
 
 	; For onBsLogger function.
@@ -1858,7 +1849,6 @@ OnBSLogger() {
         
         FileAppend(dateStamp " << " lastTrigger tabs "---> " LogEntry, ErrContextLog)
         If (beepOnContexLog = 1)
-            SoundBeep(600, 200), SoundBeep(400, 200)
         
         LogEntry := "", waitingForExtra := false, extraWordsCount := 0
         WordArr := []

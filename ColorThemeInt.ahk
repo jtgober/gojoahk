@@ -811,7 +811,6 @@ exportClip(*)
     "`nwarnColor := `"" warnColor "`""
     )
     A_Clipboard := myExp
-    SoundBeep
 }
 
 ; Called via save button.  Saves colors to ini file. 

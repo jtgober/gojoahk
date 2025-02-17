@@ -101,7 +101,4 @@ Location := A_ScriptDir "\Uniques_Report" FormatTime(A_Now, "_MMM_dd_hh_mm") ".t
 FileAppend finalReport, Location ; Save to text file, then open the file. 
 sleep 250
 Run Location
-
-SoundBeep 1800, 700
-SoundBeep 1200, 200
 ExitApp

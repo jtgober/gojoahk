@@ -424,7 +424,6 @@ CullItemFromLog(itemToCull) {
     while FileExist(ACLog) 
         sleep 10
     FileAppend(newFileContents, ACLog)
-    SoundBeep
     ExitApp()
     ;MsgBox("Item culled and added`nto 'Removed' list:`n`n" itemToCull)
 }
