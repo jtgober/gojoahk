@@ -4,7 +4,8 @@ SetTitleMatchMode("RegEx")
 #Requires AutoHotkey v2+
 #Include "DateTool.ahk"
 #Include "PrinterTool.ahk"
-#Include "HotstringLib.ahk"
+#Include "HotstringLib.ahk" 
+#include "GojoAdded.ahk"
 
 TraySetIcon(A_ScriptDir "\Icons\AhkBluePsicon.ico")
 ;===============================================================================
